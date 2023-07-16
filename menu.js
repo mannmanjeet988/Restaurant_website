@@ -7,7 +7,7 @@ async function getMenu(){
     try{
         const response = await fetch(endpoint,{method:'GET'});
         fetchedData= await response.json();
-        const items = fetchedData.slice(0, 8);
+        const items = fetchedData;
         //console.log(data);
         renderDataOnUI(items);
         return items;
@@ -40,3 +40,26 @@ function renderDataOnUI(data){
     container.appendChild(card);
     });   
 }
+
+// Code to change colour of current anchor tag if target href matches with clicked href
+const anchorTags = document.querySelectorAll('a');
+
+// Iterate through each anchor tag
+anchorTags.forEach(anchorTag => {
+  // Add a click event listener to each anchor tag
+  anchorTag.addEventListener('click', event => {
+    // Get the href of the clicked anchor tag
+    const clickedHref = event.target.getAttribute('href');
+
+    // Iterate through each anchor tag again to check for matching href
+    anchorTags.forEach(tag => {
+      // Get the href of the current anchor tag
+      const tagHref = tag.getAttribute('href');
+
+      if (tagHref === clickedHref) {
+        // Changing the color of the anchor tag
+        tag.style.color = 'green'; 
+      }
+    });
+  });
+});

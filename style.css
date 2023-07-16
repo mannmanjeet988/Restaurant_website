@@ -18,6 +18,7 @@
     width:20vw;
     height:100vh;
     background-color: #0C0E10;
+    position: fixed;
     /* border:1px solid red; */
 }
 
@@ -71,10 +72,11 @@ li{
 
 /* right-side complete section */
 .right-container{
-    height:100vh;
+    /* height:100vh; */
     width:100vw;
     background: black;
     /* border: 5px solid blue; */
+    margin-left: 20vw;
 }
 
 /* navbar section */
@@ -124,7 +126,10 @@ button{
     background-color: red;
     border:none;
 }
- 
+
+a:hover{
+    color:aqua;
+}
 
 /* banner section */
 .banner{
@@ -154,6 +159,10 @@ a{
     text-decoration: none;
     padding-left: 10px;
 }
+
+/* a:hover{
+    color:green;
+} */
 
 .container{
     display: flex;

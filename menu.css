@@ -18,6 +18,7 @@
     width:20vw;
     height:100vh;
     background-color: #0C0E10 !important;
+    position:fixed;
     /* border:1px solid red; */
 }
 
@@ -213,11 +214,12 @@ li{
 
 /* right-side complete section */
 .right-container{
-    height:100vh;
+    /* height:100vh; */
     width:100vw;
     background: black;
     /* border: 5px solid blue; */
-}
+    margin-left: 20vw;
+    }
 
 /* navbar section */
 .navbar{
@@ -267,6 +269,9 @@ button{
     border:none;
 }
  
+a:hover{
+    color:aqua;
+}
 
 /* banner section */
 .banner{
@@ -303,6 +308,7 @@ a{
 flex-wrap: wrap;
 column-gap: 40px;
 justify-content: space-evenly;
+background-color: black;
 }
 
 .card{
