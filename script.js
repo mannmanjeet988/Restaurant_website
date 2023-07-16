@@ -5,11 +5,12 @@ let fetchedData=[];
 async function getMenu(){  
     try{
         const response = await fetch(endpoint,{method:'GET'});
-        const fetchedData= await response.json();
+        fetchedData= await response.json();
         const items = fetchedData.slice(0, 4);
         //console.log(data);
         renderDataOnUI(items);
         //thankyouFnc();
+        return items;
     }catch(error){
         console.log(error.message)
     }   
@@ -33,7 +34,7 @@ function renderDataOnUI(data){
             <span>${name}</span>
             <span>$${price}/-</span>
         </div>
-        <span  <i class="fa-solid fa-square-plus"></i></span>
+        <span> <i class="fa-solid fa-square-plus"></i></span>
     </div>    `;  
     
     container.appendChild(card);
@@ -51,7 +52,7 @@ function renderDataOnUI(data){
        try{
         const data = fetchedData;
 
-        randomItems=[];
+        let randomItems=[];
         while(randomItems.length<3){
             const randomItemsIndex=Math.floor(Math.random() * data.length);
             const randomItem = data[randomItemsIndex];
@@ -118,10 +119,10 @@ function thankyouFnc() {
 
 async function handlepromiseChain(){
     try{
-        // const data= await getMenu();
-        // //console.log("DATA1-->", data, new Date());
-        // const data2 = await takeOrder();
-        // console.log("DATA2-->", data2, new Date());
+        const data= await getMenu();
+        console.log("DATA1-->", data, new Date());
+        const data2 = await takeOrder();
+        console.log("DATA2-->", data2, new Date());
         const data3 =  await orderPrep();
         console.log("DATA3-->", data3, new Date());
         const data4 = await payOrder();

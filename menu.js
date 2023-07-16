@@ -6,10 +6,11 @@ let fetchedData=[];
 async function getMenu(){  
     try{
         const response = await fetch(endpoint,{method:'GET'});
-        const fetchedData= await response.json();
+        fetchedData= await response.json();
         const items = fetchedData.slice(0, 8);
         //console.log(data);
         renderDataOnUI(items);
+        return items;
     }catch(error){
         console.log(error.message)
     }   
@@ -33,7 +34,7 @@ function renderDataOnUI(data){
             <span>${name}</span>
             <span>$${price}/-</span>
         </div>
-        <span  <i class="fa-solid fa-square-plus"></i></span>
+        <span><i class="fa-solid fa-square-plus"></i></span>
     </div>    `;  
     
     container.appendChild(card);
