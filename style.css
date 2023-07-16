@@ -7,6 +7,7 @@
     /* font-family: 'Inter Tight', sans-serif; */
     font-family: 'Poppins', sans-serif;
     
+    /* background-color: black; */
 }
 
 .main{
@@ -72,11 +73,12 @@ li{
 
 /* right-side complete section */
 .right-container{
-    /* height:100vh; */
+    height:100vh;
     width:100vw;
     background: black;
     /* border: 5px solid blue; */
     margin-left: 20vw;
+    overflow-x: hidden;
 }
 
 /* navbar section */
@@ -144,8 +146,10 @@ a:hover{
 
 .banner img{
     /* width:calc(100%-200px); */
-    width:80vw;
+    width:76vw;
     height:260px;
+    /* padding: 10px; */
+    /* margin-right: 20px; */
 }
 
 /* menu section */
