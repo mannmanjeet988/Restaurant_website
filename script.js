@@ -11,7 +11,7 @@ async function getMenu(){
         renderDataOnUI(items);
         //thankyouFnc();
     }catch(error){
-        console.log(error)
+        console.log(error.message)
     }   
 }
 //getMenu();
@@ -39,8 +39,6 @@ function renderDataOnUI(data){
     container.appendChild(card);
     });   
 }
-
-
 
 // TakeOrder() function: (15 marks)
 // Returning a promise:
@@ -120,10 +118,10 @@ function thankyouFnc() {
 
 async function handlepromiseChain(){
     try{
-        const data= await getMenu();
-        //console.log("DATA1-->", data, new Date());
-        const data2 = await takeOrder();
-        console.log("DATA2-->", data2, new Date());
+        // const data= await getMenu();
+        // //console.log("DATA1-->", data, new Date());
+        // const data2 = await takeOrder();
+        // console.log("DATA2-->", data2, new Date());
         const data3 =  await orderPrep();
         console.log("DATA3-->", data3, new Date());
         const data4 = await payOrder();
